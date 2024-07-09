@@ -102,8 +102,8 @@ void replace_grid()
     {
         for (int j = 0; j < SIZE; j++)
         {
-            x0 = (j % 3) * 3;                          // starting collumn (0, 3, 6)
-            y0 = (i % 3) * 3;                          // starting row (0, 3, 6)
+            x0 = (j / 3) * 3;                          // starting collumn (0, 3, 6)
+            y0 = (i / 3) * 3;                          // starting row (0, 3, 6)
             memset(count, 0, size * sizeof(count[0])); // reset the array to 0
 
             // check if number is appear in the given square
@@ -152,8 +152,8 @@ bool possible(int row, int col, int number)
         }
     }
     // is the number appearing in the given grid
-    int x0 = (col % 3) * 3; // starting collumn (0, 3, 6)
-    int y0 = (row % 3) * 3; // starting row (0, 3, 6)
+    int x0 = (col / 3) * 3; // starting collumn (0, 3, 6)
+    int y0 = (row / 3) * 3; // starting row (0, 3, 6)
     for (int x = 0; x < 3; x++)
     {
         for (int y = 0; y < 3; y++)
@@ -177,7 +177,7 @@ void solve()
             // check for empty spot
             if (grid[row][col] == 0)
             {
-                for (int n = 0; n < 10; n++) // guess from 1 to 9
+                for (int n = 1; n < 10; n++) // guess from 1 to 9
                 {
                     if (possible(row, col, n))
                     {
