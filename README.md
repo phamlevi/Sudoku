@@ -1,2 +1,2 @@
 # Sudoku
-Attempts to make a sudoku generator &amp; solver
+Attempts to make a sudoku generator &amp; solver program.
